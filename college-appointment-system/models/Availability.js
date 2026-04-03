@@ -4,7 +4,7 @@ const availabilitySchema = new mongoose.Schema({
 
     professorId: { type: mongoose.Schema.Types.ObjectId, ref: "User", required: true },
     date: { type: Date, required: true },
-    slots: [{ type: String, required: true }]    //slots: [{ type: String }]
+    slots: [{ type: String, required: true }] 
    
 
 }, { timestamps: true });

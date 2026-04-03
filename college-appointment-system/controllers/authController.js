@@ -38,8 +38,6 @@ export const registerUser = async (req, res) => {
         const user = await newUser.save();
 
 
-        //const token = GenToken(user._id);, token
-
         res.status(201).json({ message: "User registered successfully", user });
 
 
@@ -59,13 +57,8 @@ export const loginUser = async (req, res) => {
 
     try {
 
-        //console.log("loginUser called successfully");     
 
         const { email, password } = req.body;
-
-        //console.log("Email:", email);
-        //console.log("Password:", password);
-
 
 
         const user = await User.findOne({ email });
@@ -83,7 +76,7 @@ export const loginUser = async (req, res) => {
 
         const token = jwt.sign(
             { id: user._id, role: user.role }, process.env.JWT_SECRET,
-            { expiresIn: "1d" }
+            { expiresIn: "7d" }
         );
 
         res.json({ message: "Login successful", token });

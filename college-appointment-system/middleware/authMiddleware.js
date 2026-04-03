@@ -9,7 +9,6 @@ import jwt from 'jsonwebtoken';
 
         const authHeader = req.headers.authorization;
 
-        //console.log("authHeader:", authHeader); // Debugging line
 
         if (!authHeader || !authHeader.startsWith("Bearer ")) {
             return res.status(401).json({ message: "Unauthorized" });
