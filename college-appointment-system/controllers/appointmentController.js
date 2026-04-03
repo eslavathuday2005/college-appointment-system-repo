@@ -66,7 +66,7 @@ export const cancelAppointment = async (req, res) => {
 
 
 
-// Student view appointments
+// Student view appointments status
 
 export const viewStudentAppointments = async (req, res) => {
 
